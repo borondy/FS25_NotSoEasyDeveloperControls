@@ -30,6 +30,23 @@ Clear fertilizer on the field the player is standing on:
 clearFertilizerState
 ```
 
+## Growth state commands
+
+```
+getGrowthState [fieldId]
+setGrowthState [fieldId] <state>
+```
+
+- `getGrowthState` shows, per crop on the field, which growth states are present and their share (any player).
+- `setGrowthState` sets the growth state of the dominant crop (largest area) on the field to `<state>` (a number). Other crops on the field are left alone. Nothing is planted on empty ground. If `<state>` is out of range for the dominant crop, nothing changes. Admin only, applied on the server.
+- With one argument to `setGrowthState` it is the state and the field under the player is used.
+
+```
+getGrowthState 12
+setGrowthState 12 3
+setGrowthState 3
+```
+
 ## Why this mod exists
 
 - We ran a fairly realistic multiplayer server where fields get fertilized with multiple passes of fertilizer. Because the fertilizer state was already painted, we needed a way to clear this layer so fertilizer could be spread again.
