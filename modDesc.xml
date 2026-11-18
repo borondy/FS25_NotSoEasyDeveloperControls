@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="106">
     <author>Hunor</author>
-    <version>1.1.0.0</version>
+    <version>1.2.0.0</version>
     <iconFilename>icon.dds</iconFilename>
     <title>
-        <en>Fertilizer State Cleaner</en>
+        <en>Not So Easy Developer Controls</en>
     </title>
     <description>
         <en><![CDATA[Admin console commands to fix up a field.
 
 Console commands:
-clearFertilizerState [fieldId] - clears the fertilizer ground layer
-setGrowthState [fieldId] <state> - sets the growth state of the dominant crop on the field (number)
-getGrowthState [fieldId] - shows the growth states of the crops on the field
+nseClearFertilizerState [fieldId] - clears the fertilizer ground layer
+nseSetGrowthState [fieldId] <state> - sets the growth state of the dominant crop on the field (number)
+nseGetGrowthState [fieldId] - shows the growth states of the crops on the field
+nseSetGroundType <id> - sets the ground type (1 = none, 2 = stubble tillage, 3 = cultivated, 4 = seedbed, 5 = plowed, ... 16 = grass cut) of the field the player is standing on
 
-Without a field id the field under the player is used. Only fertilizer is removed, other spray types (manure, lime, ...) are left untouched. setGrowthState only changes the existing dominant crop. In multiplayer only admins can use the changing commands and the change is applied on the server.]]></en>
+Without a field id the field under the player is used. Only fertilizer is removed, other spray types (manure, lime, ...) are left untouched. nseSetGrowthState only changes the existing dominant crop. In multiplayer only admins can use the changing commands and the change is applied on the server.]]></en>
     </description>
     <multiplayer supported="true"/>
     <extraSourceFiles>
-        <sourceFile filename="scripts/FertilizerStateCleanerEvent.lua"/>
-        <sourceFile filename="scripts/FertilizerStateCleaner.lua"/>
+        <sourceFile filename="scripts/NotSoEasyDeveloperControlsEvent.lua"/>
+        <sourceFile filename="scripts/NotSoEasyDeveloperControls.lua"/>
     </extraSourceFiles>
 </modDesc>

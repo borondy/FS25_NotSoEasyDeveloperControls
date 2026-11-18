@@ -1,4 +1,4 @@
-# FS25 Fertilizer State Cleaner
+# FS25 Not So Easy Developer Controls
 
 Farming Simulator 25 mod. Adds an admin console command that clears the fertilizer state (ground layer) of a field. This lets players spread fertilizer on the same field again, with different products.
 
@@ -15,36 +15,50 @@ With a console command, the mod cleans the fertilizer state/layer of the specifi
 Open the developer console and run:
 
 ```
-clearFertilizerState [fieldId]
+nseClearFertilizerState [fieldId]
 ```
 
 Clear fertilizer on field 12:
 
 ```
-clearFertilizerState 12
+nseClearFertilizerState 12
 ```
 
 Clear fertilizer on the field the player is standing on:
 
 ```
-clearFertilizerState
+nseClearFertilizerState
 ```
 
 ## Growth state commands
 
 ```
-getGrowthState [fieldId]
-setGrowthState [fieldId] <state>
+nseGetGrowthState [fieldId]
+nseSetGrowthState [fieldId] <state>
 ```
 
-- `getGrowthState` shows, per crop on the field, which growth states are present and their share (any player).
-- `setGrowthState` sets the growth state of the dominant crop (largest area) on the field to `<state>` (a number). Other crops on the field are left alone. Nothing is planted on empty ground. If `<state>` is out of range for the dominant crop, nothing changes. Admin only, applied on the server.
-- With one argument to `setGrowthState` it is the state and the field under the player is used.
+- `nseGetGrowthState` shows, per crop on the field, which growth states are present and their share (any player).
+- `nseSetGrowthState` sets the growth state of the dominant crop (largest area) on the field to `<state>` (a number). Other crops on the field are left alone. Nothing is planted on empty ground. If `<state>` is out of range for the dominant crop, nothing changes. Admin only, applied on the server.
+- With one argument to `nseSetGrowthState` it is the state and the field under the player is used.
 
 ```
-getGrowthState 12
-setGrowthState 12 3
-setGrowthState 3
+nseGetGrowthState 12
+nseSetGrowthState 12 3
+nseSetGrowthState 3
+```
+
+## Ground type command
+
+```
+nseSetGroundType <id>
+```
+
+Sets the ground type of the whole field the player is standing on. Admin only, applied on the server. `<id>` is the `FieldGroundType` id:
+
+1 NONE, 2 STUBBLE_TILLAGE, 3 CULTIVATED, 4 SEEDBED, 5 PLOWED, 6 ROLLED_SEEDBED, 7 RIDGE, 8 SOWN, 9 DIRECT_SOWN, 10 PLANTED, 11 RIDGE_SOWN, 12 ROLLER_LINES, 13 HARVEST_READY, 14 HARVEST_READY_OTHER, 15 GRASS, 16 GRASS_CUT
+
+```
+nseSetGroundType 3
 ```
 
 ## Why this mod exists

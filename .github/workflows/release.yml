@@ -14,4 +14,4 @@ jobs:
       contents: write
     uses: borondy/fs25-mod-workflows/.github/workflows/fs25-release.yml@v1
     with:
-      mod-name: FS25_FertilizerStateCleaner
+      mod-name: FS25_NotSoEasyDeveloperControls
